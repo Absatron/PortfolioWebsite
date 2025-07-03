@@ -34,44 +34,20 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 cosmic-section relative overflow-hidden">
-      {/* Starfield Background */}
-      <div className="starfield-container">
-        <div className="starfield starfield-layer-1 opacity-15"></div>
-        <div className="starfield starfield-layer-3 opacity-10"></div>
-      </div>
-
-      {/* Nebulae Effects */}
-      <div className="nebulae-container">
-        <div className="nebula nebula-1 opacity-05"></div>
-        <div className="nebula nebula-3 opacity-05"></div>
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="projects" className="py-20">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 floating-text">
-            <span className="cosmic-word hover-glow inline-block">Featured</span>{' '}
-            <span className="cosmic-word hover-glow inline-block neon-accent pulsating">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto floating-text">
-            <span className="cosmic-word hover-glow inline-block">Here</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">are</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">some</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">of</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">my</span>{' '}
-            <span className="cosmic-word hover-glow inline-block neon-accent pulsating">recent</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">projects</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">that</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">showcase</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">my</span>{' '}
-            <span className="cosmic-word hover-glow inline-block neon-accent pulsating">technical</span>{' '}
-            <span className="cosmic-word hover-glow inline-block">skills.</span>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my technical skills.
           </p>
         </div>
         
         <div className="grid gap-12 max-w-4xl mx-auto">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300 hover:shadow-primary/20 cosmic-card floating-text">
+            <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300">
               <div className="space-y-6">
                 {/* Demo Video */}
                 <div className="aspect-video relative">
@@ -88,21 +64,20 @@ const Projects = () => {
                 {/* Project Details */}
                 <CardContent className="p-8">
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-bold cosmic-word hover-glow neon-accent pulsating">{project.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed cosmic-word">{project.description}</p>
+                    <h3 className="text-2xl font-bold text-primary">{project.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="cosmic-button cosmic-word hover-glow">{tech}</Badge>
+                        <Badge key={techIndex} variant="outline">{tech}</Badge>
                       ))}
                     </div>
                     <div className="flex gap-4 pt-4">
-                      <Button variant="outline" size="sm" className="group cosmic-button">
+                      <Button variant="outline" size="sm" className="group">
                         <Github className="w-4 h-4 mr-2" />
-                        <span className="cosmic-word hover-glow">Code</span>
+                        Code
                       </Button>
-                      <Button size="sm" className="group cosmic-button">
-                        <span className="cosmic-word hover-glow">Live</span>{' '}
-                        <span className="cosmic-word hover-glow">Demo</span>
+                      <Button size="sm" className="group">
+                        Live Demo
                         <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </div>

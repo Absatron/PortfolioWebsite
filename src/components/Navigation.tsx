@@ -5,26 +5,21 @@ import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border cosmic-nav">
-      {/* Starfield Background for Nav */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="starfield starfield-layer-1 opacity-30"></div>
-      </div>
-      
-      <div className="container mx-auto px-6 py-4 relative z-10">
+    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary hover-glow cursor-pointer cosmic-word pulsating">
+          <div className="text-2xl font-bold text-primary cursor-pointer">
             {'<Dev/>'}
           </div>
           <div className="hidden md:flex space-x-8">
-            <a href="#about" className="cosmic-word hover-glow transition-colors">About</a>
-            <a href="#projects" className="cosmic-word hover-glow transition-colors">Projects</a>
-            <a href="#skills" className="cosmic-word hover-glow transition-colors">Skills</a>
-            <a href="#contact" className="cosmic-word hover-glow transition-colors">Contact</a>
+            <a href="#about" className="hover:text-primary transition-colors">About</a>
+            <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
+            <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
+            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
-          <Button variant="outline" size="sm" className="hidden md:flex items-center gap-2 cosmic-button">
+          <Button variant="outline" size="sm" className="hidden md:flex items-center gap-2">
             <Download className="w-4 h-4" />
-            <span className="cosmic-word hover-glow">Resume</span>
+            Resume
           </Button>
         </div>
       </div>
