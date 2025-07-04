@@ -1,28 +1,28 @@
 
 import React from 'react';
-import { Terminal, Code, Database } from 'lucide-react';
+import { Terminal, Code, Database, Settings } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const Skills = () => {
   const skills = [
     { 
       category: "Languages", 
-      items: ["JavaScript/TypeScript", "Python", "Go", "Rust", "Solidity", "C++"],
+      items: ["JavaScript/TypeScript", "Python", "Java", "C", "Visual Basic .NET"],
       icon: <Code className="w-6 h-6" />
     },
     { 
       category: "Backend & Cloud", 
-      items: ["Node.js", "Docker", "Kubernetes", "AWS", "GCP", "Microservices"],
+      items: ["Node.js", "Express.js", "MongoDB", "JWT Authentication", "RESTful APIs", "Stripe Integration"],
       icon: <Database className="w-6 h-6" />
     },
     { 
       category: "Frontend & Mobile", 
-      items: ["React", "Next.js", "React Native", "Vue.js", "WebGL", "PWA"],
+      items: ["React", "Next.js", "Vue.js", "Tailwind CSS", "Windows Forms", "Responsive Design"],
       icon: <Terminal className="w-6 h-6" />
     },
     { 
       category: "Data & AI", 
-      items: ["TensorFlow", "PyTorch", "Redis", "PostgreSQL", "MongoDB", "GraphQL"],
+      items: ["TensorFlow", "PyTorch", "Reinforcement Learning", "Neural Networks", "Algorithm Visualization"],
       icon: <Database className="w-6 h-6" />
     }
   ];

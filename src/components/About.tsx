@@ -14,20 +14,23 @@ const About = () => {
           </div>
           <div className="space-y-8 text-lg text-muted-foreground">
             <p className="leading-relaxed">
-              I'm a passionate software engineer with 5+ years of experience building robust applications and distributed systems.
+              I am a software engineer with a passion for tackling complex problems head-on and a relentless drive to expand my toolkit—whether that means diving into the latest AI research, mastering a new framework, or exploring the impacts of technology on our health, wealth and relationships. 
             </p>
             <p className="leading-relaxed">
-              My expertise spans full-stack development, cloud architecture, and DevOps practices. I love tackling challenging problems and turning ideas into reality.
+              By asking incisive questions and slicing problems into clear, actionable steps, I create smart, streamlined solutions that drive my personal development and, with the right perspective, uplift the wider community.
             </p>
             <p className="leading-relaxed">
-              When I'm not coding, you'll find me contributing to open source, mentoring junior developers, or exploring the latest tech trends.
+              Time is my most precious resource, so I leverage productivity hacks and continuous learning to make every minute count—balancing hands-on development with deep study to stay ahead of the curve. 
+            </p>
+             <p className="leading-relaxed">
+              When I am not developing, you’ll find me exploring thought-provoking insights from podcasts and books, mentoring others or in the gym. 
             </p>
           </div>
           <div className="flex flex-wrap gap-3 mt-8 justify-center">
             <Badge variant="secondary">Problem Solver</Badge>
-            <Badge variant="secondary">System Architect</Badge>
-            <Badge variant="secondary">Open Source Contributor</Badge>
-            <Badge variant="secondary">Tech Enthusiast</Badge>
+            <Badge variant="secondary">Critcal Thinker</Badge>
+            <Badge variant="secondary">Mentor</Badge>
+            <Badge variant="secondary">Student of knowledge</Badge>
           </div>
         </div>
       </div>

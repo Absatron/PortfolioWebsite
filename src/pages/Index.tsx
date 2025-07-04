@@ -16,7 +16,6 @@ const Index = () => {
       <About />
       <Projects />
       <Skills />
-      <Testimonials />
       <Contact />
 
       {/* Footer */}
@@ -27,7 +26,7 @@ const Index = () => {
               {'<Dev/>'}
             </div>
             <div className="text-muted-foreground">
-              © 2024 Alex. Built with passion and lots of coffee.
+              © 2025 Abdullah. All rights reserved.
             </div>
           </div>
         </div>

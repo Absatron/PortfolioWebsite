@@ -16,7 +16,7 @@ const Hero = () => {
               AI / Full-Stack Software Engineer
             </div>
             <p className="text-xl leading-relaxed max-w-3xl mx-auto text-muted-foreground">
-              I build scalable systems, solve complex problems, and create innovative solutions that make a difference.
+              Where complexity meets clarity: I ask the right questions and engineer innovative solutions that actually work
             </p>
           </div>
         </div>

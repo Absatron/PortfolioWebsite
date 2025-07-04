@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Personal files
+public/Abdullah_James_CV.pdf
+public/videos/kalu-cuts-demo-web.mp4

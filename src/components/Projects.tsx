@@ -8,28 +8,25 @@ import { Badge } from '@/components/ui/badge';
 const Projects = () => {
   const projects = [
     {
-      title: "Distributed Task Scheduler",
-      description: "Built a high-performance distributed task scheduling system using microservices architecture with Redis and Docker. Handles 10k+ concurrent tasks with automatic failover and load balancing.",
-      tech: ["Node.js", "Redis", "Docker", "Kubernetes"],
-      demo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      github: "https://github.com/username/task-scheduler",
-      live: "https://task-scheduler-demo.com"
+      title: "Kalu Cuts - Booking System",
+      description: "A comprehensive full-stack appointment booking platform with secure payment processing, real-time availability tracking, and admin dashboard. Features JWT authentication, Stripe payments, automated email confirmations, and PDF receipt generation.",
+      tech: ["React", "TypeScript", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+      demo: "/videos/kalu-cuts-demo-web.mp4",
+      github: "https://github.com/Absatron/BookingWebsite"
     },
     {
-      title: "Real-time Crypto Trading Bot",
-      description: "Algorithmic trading bot with machine learning price prediction. Implements multiple trading strategies with real-time market data analysis and automated risk management.",
-      tech: ["Python", "TensorFlow", "WebSockets", "PostgreSQL"],
+      title: "ML-Powered Trading Algorithm",
+      description: "Advanced machine learning trading system combining neural network price prediction with reinforcement learning optimization. Features deep learning models, technical analysis integration, risk management, and QuantConnect platform integration for automated forex and CFD trading.",
+      tech: ["Python", "TensorFlow", "PyTorch", "QuantConnect", "Reinforcement Learning", "Neural Networks"],
       demo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      github: "https://github.com/username/crypto-bot",
-      live: "https://crypto-bot-dashboard.com"
+      github: "https://github.com/Absatron/TradingAlgoQuantConnect"
     },
     {
-      title: "Blockchain Voting System",
-      description: "Decentralized voting platform ensuring transparency and immutability. Smart contracts handle vote casting and counting with zero-knowledge proofs for privacy.",
-      tech: ["Solidity", "Web3.js", "React", "IPFS"],
+      title: "Graph Theory Teacher Aid",
+      description: "An interactive Visual Basic .NET educational tool for visualizing graph theory algorithms. Features step-by-step demonstrations of BFS, DFS, Dijkstra's algorithm, and TSP solutions with drag-and-drop graph creation, customizable animations, and multiple data representations.",
+      tech: ["Visual Basic .NET", "Windows Forms", "XML", "Graph Theory", "Algorithm Visualization"],
       demo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      github: "https://github.com/username/blockchain-voting",
-      live: "https://blockchain-vote.com"
+      github: "https://github.com/Absatron/GraphTheoryTeachingAid",
     }
   ];
 
@@ -50,15 +47,18 @@ const Projects = () => {
             <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300">
               <div className="space-y-6">
                 {/* Demo Video */}
-                <div className="aspect-video relative">
-                  <iframe
+                <div className="aspect-video relative overflow-hidden rounded-t-lg bg-gray-100">
+                  <video
                     src={project.demo}
-                    title={`${project.title} Demo`}
-                    className="w-full h-full rounded-t-lg"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 
                 {/* Project Details */}
@@ -72,14 +72,12 @@ const Projects = () => {
                       ))}
                     </div>
                     <div className="flex gap-4 pt-4">
-                      <Button variant="outline" size="sm" className="group">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
-                      <Button size="sm" className="group">
-                        Live Demo
-                        <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                     <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" size="sm" className="group">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </CardContent>
