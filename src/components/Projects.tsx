@@ -18,14 +18,14 @@ const Projects = () => {
       title: "ML-Powered Trading Algorithm",
       description: "Advanced machine learning trading system combining neural network price prediction with reinforcement learning optimization. Features deep learning models, technical analysis integration, risk management, and QuantConnect platform integration for automated forex and CFD trading.",
       tech: ["Python", "TensorFlow", "PyTorch", "QuantConnect", "Reinforcement Learning", "Neural Networks"],
-      demo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      demo: "/videos/Trading-demo.mp4",
       github: "https://github.com/Absatron/TradingAlgoQuantConnect"
     },
     {
       title: "Graph Theory Teacher Aid",
       description: "An interactive Visual Basic .NET educational tool for visualizing graph theory algorithms. Features step-by-step demonstrations of BFS, DFS, Dijkstra's algorithm, and TSP solutions with drag-and-drop graph creation, customizable animations, and multiple data representations.",
       tech: ["Visual Basic .NET", "Windows Forms", "XML", "Graph Theory", "Algorithm Visualization"],
-      demo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      demo: "/videos/TeachingAid-demo.mp4",
       github: "https://github.com/Absatron/GraphTheoryTeachingAid",
     }
   ];
