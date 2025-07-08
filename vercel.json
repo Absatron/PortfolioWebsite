@@ -75,6 +75,58 @@
       ]
     },
     {
+      "source": "/(.*)\\.pdf",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.mp4",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Content-Type",
+          "value": "video/mp4"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.webm",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Content-Type",
+          "value": "video/webm"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.mov",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Content-Type",
+          "value": "video/quicktime"
+        }
+      ]
+    },
+    {
       "source": "/(.*)\\.woff",
       "headers": [
         {
