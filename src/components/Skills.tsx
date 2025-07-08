@@ -32,10 +32,24 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Skills & Technologies
+            {["Skills", "&", "Technologies"].map((word, index) => (
+              <React.Fragment key={index}>
+                {index > 0 && ' '}
+                <span className="hover:text-foreground hover:drop-shadow-[0_0_12px_rgba(255,255,255,1)] hover:scale-105 transition-all duration-300 cursor-default inline-block">
+                  {word}
+                </span>
+              </React.Fragment>
+            ))}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            My technical arsenal for building modern applications.
+            {["My", "technical", "arsenal", "for", "building", "modern", "applications."].map((word, index) => (
+              <React.Fragment key={index}>
+                {index > 0 && ' '}
+                <span className="hover:text-foreground hover:drop-shadow-[0_0_12px_rgba(255,255,255,1)] hover:scale-105 transition-all duration-300 cursor-default inline-block">
+                  {word}
+                </span>
+              </React.Fragment>
+            ))}
           </p>
         </div>
         
@@ -46,11 +60,13 @@ const Skills = () => {
                 <div className="text-primary group-hover:scale-110 transition-transform">
                   {skillGroup.icon}
                 </div>
-                <h3 className="text-xl font-bold text-primary">{skillGroup.category}</h3>
+                <h3 className="text-xl font-bold text-primary group-hover:text-foreground group-hover:drop-shadow-[0_0_16px_rgba(255,255,255,1)] group-hover:scale-110 transition-all duration-300">
+                  {skillGroup.category}
+                </h3>
               </div>
               <div className="space-y-3">
                 {skillGroup.items.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="text-muted-foreground">
+                  <div key={skillIndex} className="text-muted-foreground hover:text-foreground hover:drop-shadow-[0_0_16px_rgba(255,255,255,1.2)] transition-all duration-300 cursor-default">
                     {skill}
                   </div>
                 ))}
