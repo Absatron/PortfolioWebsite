@@ -1,5 +1,4 @@
-
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -29,6 +28,16 @@ const Hero = () => {
   const animationRef = useRef<number>();
   const mouseRef = useRef({ x: 0, y: 0 });
   const timeRef = useRef(0);
+  const lastFrameTime = useRef(0);
+  const isVisible = useRef(true);
+
+  // Performance monitoring
+  const performanceConfig = useMemo(() => ({
+    maxParticles: window.innerWidth < 768 ? 50 : window.innerWidth < 1200 ? 100 : 150,
+    targetFPS: 60,
+    adaptiveQuality: true,
+    reduceMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  }), []);
 
   // Pre-create gradients to avoid recreation every frame
   const createParticleGradients = useCallback((ctx: CanvasRenderingContext2D, size: number): GradientLayer[] => {
@@ -86,8 +95,8 @@ const Hero = () => {
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
       
-      // Reduce particle count for mobile devices
-      const particleCount = window.innerWidth < 768 ? 100 : 200;
+      // Optimize particle count based on device capabilities
+      const particleCount = window.innerWidth < 768 ? 50 : window.innerWidth < 1200 ? 100 : 150;
 
       for (let i = 0; i < particleCount; i++) {
         const angle = Math.random() * Math.PI * 2;
@@ -123,8 +132,20 @@ const Hero = () => {
       }
     };
 
-    // Animation loop
-    const animate = () => {
+    // Animation loop with performance monitoring
+    const animate = (currentTime: number) => {
+      if (!isVisible.current) {
+        animationRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
+      // FPS throttling
+      if (currentTime - lastFrameTime.current < 1000 / performanceConfig.targetFPS) {
+        animationRef.current = requestAnimationFrame(animate);
+        return;
+      }
+      lastFrameTime.current = currentTime;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       timeRef.current += 0.016; // ~60fps
 
@@ -256,7 +277,7 @@ const Hero = () => {
     };
 
     initParticles();
-    animate();
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener('resize', updateCanvasSize);
@@ -265,10 +286,31 @@ const Hero = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [updateMousePosition, createParticleGradients]);
+  }, [updateMousePosition, createParticleGradients, performanceConfig.targetFPS]);
+
+  // Add intersection observer to pause animation when component is not visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible.current = entry.isIntersecting;
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.querySelector('[data-hero-section]');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
 
   return (
-    <section className="relative py-20 md:py-32 min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <section className="relative py-20 md:py-32 min-h-screen flex items-center justify-center bg-black overflow-hidden" data-hero-section>
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"

@@ -8,7 +8,11 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:analyze": "vite build --mode development && npx vite-bundle-analyzer dist/stats.html",
+    "typecheck": "tsc --noEmit",
+    "deploy:vercel": "vercel --prod",
+    "deploy:netlify": "netlify deploy --prod --dir=dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
