@@ -324,7 +324,7 @@ const Hero = () => {
               Hello, I'm Abdullah
             </h1>
             <div className="text-2xl md:text-3xl font-mono text-primary floating-text-delayed">
-              AI / Full-Stack Software Engineer
+              AI / Full-Stack Developer
             </div>
             <p className="text-xl leading-relaxed max-w-3xl mx-auto text-muted-foreground floating-text opacity-90">
               Where complexity meets clarity: I ask the right questions and engineer innovative solutions that actually work
