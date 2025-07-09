@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Color palette: powder blue, slate blue, tekhelet, violet, licorice */
+/* Color palette: powder blue, slate blue, tekhelet, violet, licorice, black */
 
 @layer base {
   :root {
